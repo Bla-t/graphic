@@ -29,7 +29,9 @@
 <div class="container fluid" id="bag">
   <div class="row">
     <div class="col-md-6">
-      <label><h2 style="text-align: center;"> RESI BARCODE</h2></label>
+      <label><h2 style="text-align: center;"> RESI BARCODE</h2>
+	    <button class ="btn btn-success" onclick ="">update</button>
+	    <button class ="btn btn-info" onclick ="">+ 1</button></label>
         <canvas id="graf" style="background-color:#DFDEDC ; opacity : 90%;"></canvas>
     </div> 
     <div class="col-md-6">
@@ -52,10 +54,6 @@
 
 ?>
 <script>
-	var defolt = document.getElementById("");
-
-
-
 	var ctx = document.getElementById('graf').getContext('2d');
 	var chart = new Chart(ctx, {
     // The type of chart we want to create
@@ -74,6 +72,12 @@
     // Configuration options go here
     options: {}
 });
+	function update() {
+	
+		chart.data.datasets[0].data = [];
+		chart.update();
+		
+	}
 
  /////////////////////////////
 
